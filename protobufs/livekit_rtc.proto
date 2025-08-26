@@ -18,6 +18,7 @@ package livekit;
 
 import "livekit_models.proto";
 import "logger/options.proto";
+import "livekit_temptalk.proto";
 
 option csharp_namespace = "LiveKit.Proto";
 option go_package = "github.com/livekit/protocol/livekit";
@@ -67,6 +68,8 @@ message SignalRequest {
     StoreDataBlobRequest store_data_blob_request = 22;
     // Retrieve a stored data blob.
     GetDataBlobRequest get_data_blob_request = 23;
+
+    TTStartCall tt_start_call = 1001;
   }
 }
 
@@ -264,6 +267,9 @@ message JoinResponse {
   repeated Codec enabled_publish_codecs = 14;
   // when set, client should attempt to establish publish peer connection when joining room to speed up publishing
   bool fast_publish = 15;
+
+  // temptalk integration
+  optional TTCallResponse tt_call_response = 1001;
 }
 
 message ReconnectResponse {
