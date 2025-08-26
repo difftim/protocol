@@ -20,6 +20,7 @@ option csharp_namespace = "LiveKit.Proto";
 option ruby_package = "LiveKit::Proto";
 
 import "livekit_models.proto";
+import "livekit_temptalk.proto";
 
 message SignalRequest {
   oneof message {
@@ -55,6 +56,8 @@ message SignalRequest {
     UpdateLocalAudioTrack update_audio_track = 17;
     // Update local video track settings
     UpdateLocalVideoTrack update_video_track = 18;
+
+    TTStartCall tt_start_call = 1001;
   }
 }
 
@@ -189,6 +192,9 @@ message JoinResponse {
   repeated Codec enabled_publish_codecs = 14;
   // when set, client should attempt to establish publish peer connection when joining room to speed up publishing
   bool fast_publish = 15;
+
+  // temptalk integration
+  optional TTCallResponse tt_call_response = 1001;
 }
 
 message ReconnectResponse {
