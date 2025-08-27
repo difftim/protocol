@@ -65,7 +65,7 @@ message SignalRequest {
     // Update subscription state for one or more data tracks
     UpdateDataSubscription update_data_subscription = 21;
 
-    TTStartCall tt_start_call = 1001;
+    TTCallRequest tt_call_request = 1001;
   }
 }
 
