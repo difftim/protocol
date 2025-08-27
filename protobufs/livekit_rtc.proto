@@ -69,7 +69,7 @@ message SignalRequest {
     // Retrieve a stored data blob.
     GetDataBlobRequest get_data_blob_request = 23;
 
-    TTStartCall tt_start_call = 1001;
+    TTCallRequest tt_call_request = 1001;
   }
 }
 
