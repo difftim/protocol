@@ -57,7 +57,7 @@ message SignalRequest {
     // Update local video track settings
     UpdateLocalVideoTrack update_video_track = 18;
 
-    TTStartCall tt_start_call = 1001;
+    TTCallRequest tt_call_request = 1001;
   }
 }
 
