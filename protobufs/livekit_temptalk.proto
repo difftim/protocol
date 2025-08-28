@@ -58,8 +58,8 @@ message TTCipherMessages {
 }
 
 message TTEncInfo {
-  string emk = 1;
-  string uid = 2;
+  string uid=1;
+  string emk=2;
 }
 
 message TTNotification {
