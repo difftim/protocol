@@ -59,7 +59,7 @@ message TTCallResponseBody {
 
 message TTCallResponse{
   TTBaseResponse base = 1;
-  TTCallResponseBody startCallResInfo=2;
+  TTCallResponseBody body=2;
 }
 
 message TTCipherMessages {
