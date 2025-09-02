@@ -30,7 +30,13 @@ message TTExceptionRecipient {
   string identityKey=3;
 }
 
-message TTCallResponse {
+message TTBaseResponse {
+  uint32 ver = 1;
+  uint32 status = 2;
+  string reason = 3;
+}
+
+message TTCallResponseBody {
   bool needsSync=1;
   repeated string invalidUids=2;
   repeated TTExceptionRecipient stale=3;
@@ -49,6 +55,11 @@ message TTCallResponse {
   repeated string serviceUrls=15;
   // in milliseconds
   uint64 systemShowTimestamp=16;
+}
+
+message TTCallResponse{
+  TTBaseResponse base = 1;
+  TTCallResponseBody startCallResInfo=2;
 }
 
 message TTCipherMessages {
