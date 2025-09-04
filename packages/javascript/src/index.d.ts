@@ -21,3 +21,4 @@ export * from "./gen/livekit_sip_pb.js";
 export * from "./gen/livekit_token_source_pb.js";
 export * from "./gen/livekit_webhook_pb.js";
 export * from "./gen/version.js";
+export * from "./gen/livekit_temptalk_pb.js";
