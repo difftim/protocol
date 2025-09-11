@@ -102,4 +102,5 @@ message TTCallRequest {
   // client token: for verify
   string token = 1;
   TTStartCall startCall = 2;
+  string userAgent = 3;
 }
