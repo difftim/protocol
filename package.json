@@ -1,10 +1,11 @@
 {
-  "name": "github.com/livekit/protocol",
+  "name": "github.com/difftim/protocol",
   "private": true,
   "version": "1.42.0",
   "scripts": {
     "changeset": "changeset",
-    "ci:publish": "pnpm --filter @livekit/protocol run build && changeset publish"
+    "ci:publish": "pnpm --filter @cc-livekit/protocol run build && changeset publish",
+    "build": "pnpm --filter @cc-livekit/protocol run build"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",

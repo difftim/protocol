@@ -1,0 +1,106 @@
+// Copyright 2025 LiveKit, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package livekit;
+option go_package = "github.com/livekit/protocol/livekit";
+option csharp_namespace = "LiveKit.Proto";
+option ruby_package = "LiveKit::Proto";
+
+message TTCaller {
+  string uid=1;
+  int32 did=2;
+}
+
+message TTExceptionRecipient {
+  string uid=1;
+  int32 registrationId=2;
+  string identityKey=3;
+}
+
+message TTBaseResponse {
+  uint32 ver = 1;
+  uint32 status = 2;
+  string reason = 3;
+}
+
+message TTCallResponseBody {
+  bool needsSync=1;
+  repeated string invalidUids=2;
+  repeated TTExceptionRecipient stale=3;
+  repeated TTExceptionRecipient missing=4;
+  repeated TTExceptionRecipient extra=5;
+  map<string, string> encMeta=6;
+  string roomId=7;
+  // in milliseconds
+  int64 createdAt=8;
+  string serviceUrl=9;
+  string token=10;
+  TTCaller caller=11;
+  int32 version=12;
+  string emk=13;
+  string publicKey=14;
+  repeated string serviceUrls=15;
+  // in milliseconds
+  uint64 systemShowTimestamp=16;
+}
+
+message TTCallResponse{
+  TTBaseResponse base = 1;
+  TTCallResponseBody body=2;
+}
+
+message TTCipherMessages {
+  string content=1;
+  string uid=2;
+  int32 registrationId=3;
+}
+
+message TTEncInfo {
+  string uid=1;
+  string emk=2;
+}
+
+message TTNotification {
+  message TTArgs {
+    string collapseId = 1;
+  }
+
+  int32 type=1;
+  TTArgs args=2;
+}
+
+message TTStartCall {
+  // [must] 1on1, group, instant
+  string type=1;
+  int32 version=2;
+  string roomId=3;
+  // conversation id
+  string conversationId=4;
+  string publicKey=5;
+  repeated TTEncInfo encInfos=6;
+  map<string, string> encMeta=7;
+  // in milliseconds
+  int64 timestamp=8;
+  TTNotification notification=9;
+  repeated TTCipherMessages cipherMessages=10;
+}
+
+message TTCallRequest {
+  // client token: for verify
+  string token = 1;
+  TTStartCall startCall = 2;
+  string userAgent = 3;
+}
