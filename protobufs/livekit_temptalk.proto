@@ -57,9 +57,15 @@ message TTCallResponseBody {
   uint64 systemShowTimestamp=16;
 }
 
+message TTCallOptions {
+  bool publish_silence_audio = 1;
+}
+
 message TTCallResponse{
   TTBaseResponse base = 1;
   TTCallResponseBody body=2;
+
+  optional TTCallOptions call_options=100;
 }
 
 message TTCipherMessages {
