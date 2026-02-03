@@ -1,7 +1,7 @@
 {
   "name": "github.com/difftim/protocol",
   "private": true,
-  "version": "1.42.2-2",
+  "version": "1.42.2-3",
   "scripts": {
     "changeset": "changeset",
     "ci:publish": "pnpm --filter @cc-livekit/protocol run build && changeset publish",
