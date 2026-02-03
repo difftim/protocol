@@ -59,6 +59,7 @@ message TTCallResponseBody {
 
 message TTCallOptions {
   bool publish_silence_audio = 1;
+  bool disable_silence_on_raise_hand = 2;
 }
 
 message TTCallResponse{
