@@ -58,7 +58,15 @@ message TTCallResponseBody {
 }
 
 message TTCallOptions {
-  bool publish_silence_audio = 1;
+  // If true, the SDK automatically publishes a silent (muted) audio track
+  // right after the room is connected.
+  bool auto_publish_silence_audio = 1;
+
+  // Controls whether the SDK publishes a silent audio track when the user raises hand.
+  //
+  // Effective only when `auto_publish_silence_audio` is false:
+  // - true:  do NOT publish a silent track on raise-hand.
+  // - false: publish a silent track on raise-hand.
   bool disable_silence_on_raise_hand = 2;
 }
 
