@@ -93,6 +93,9 @@ enum MetricLabel {
   CLIENT_AUDIO_PUBLISHER_TARGET_BITRATE = 64;                         // outbound audio target bitrate
   CLIENT_AUDIO_PUBLISHER_TOTAL_PACKET_SEND_DELAY = 65;                // outbound audio total packet send delay
 
+  CLIENT_PUBLISHER_STREAM_RTT = 66;                                    // outbound RTP stream RTT from remote-inbound-rtp
+  CLIENT_SUBSCRIBER_STREAM_RTT = 67;                                   // inbound RTP stream RTT from remote-outbound-rtp
+
   METRIC_LABEL_PREDEFINED_MAX_VALUE = 4096;
 }
 
