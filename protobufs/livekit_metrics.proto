@@ -43,6 +43,58 @@ enum MetricLabel {
   SERVER_MESH_RTT = 18; // RTT between publisher node and subscriber node (could involve intermedia node(s))
   SUBSCRIBER_RTT = 19;  // Subscribe RTT (server -> participant)
 
+    CLIENT_VIDEO_SUBSCRIBER_PACKETS_RECEIVED = 20;                      // inbound video RTP packets received
+  CLIENT_VIDEO_SUBSCRIBER_BYTES_RECEIVED = 21;                        // inbound video RTP bytes received
+  CLIENT_VIDEO_SUBSCRIBER_PACKETS_LOST = 22;                          // inbound video RTP packets lost
+  CLIENT_VIDEO_SUBSCRIBER_JITTER = 23;                                // inbound video RTP jitter
+  CLIENT_VIDEO_SUBSCRIBER_FRAMES_RECEIVED = 24;                       // inbound video frames received
+  CLIENT_VIDEO_SUBSCRIBER_FRAMES_DECODED = 25;                        // inbound video frames decoded
+  CLIENT_VIDEO_SUBSCRIBER_KEY_FRAMES_DECODED = 26;                    // inbound video key frames decoded
+  CLIENT_VIDEO_SUBSCRIBER_FRAMES_DROPPED = 27;                        // inbound video frames dropped
+  CLIENT_VIDEO_SUBSCRIBER_FRAME_WIDTH = 28;                           // inbound video frame width
+  CLIENT_VIDEO_SUBSCRIBER_FRAME_HEIGHT = 29;                          // inbound video frame height
+  CLIENT_VIDEO_SUBSCRIBER_FRAMES_PER_SECOND = 30;                     // inbound video frames per second
+  CLIENT_VIDEO_SUBSCRIBER_JITTER_BUFFER_TARGET_DELAY = 31;            // inbound video jitter buffer target delay
+  CLIENT_VIDEO_SUBSCRIBER_JITTER_BUFFER_MINIMUM_DELAY = 32;           // inbound video jitter buffer minimum delay
+  CLIENT_VIDEO_SUBSCRIBER_TOTAL_DECODE_TIME = 33;                     // inbound video total decode time
+  CLIENT_VIDEO_SUBSCRIBER_TOTAL_PROCESSING_DELAY = 34;                // inbound video total processing delay
+  CLIENT_VIDEO_SUBSCRIBER_TOTAL_ASSEMBLY_TIME = 35;                   // inbound video total frame assembly time
+  CLIENT_VIDEO_SUBSCRIBER_PLI_COUNT = 36;                             // inbound video PLI count
+  CLIENT_VIDEO_SUBSCRIBER_FIR_COUNT = 37;                             // inbound video FIR count
+  CLIENT_VIDEO_SUBSCRIBER_NACK_COUNT = 38;                            // inbound video NACK count
+  CLIENT_SUBSCRIBER_CURRENT_ROUND_TRIP_TIME = 39;                     // selected candidate pair current RTT
+  CLIENT_SUBSCRIBER_AVAILABLE_INCOMING_BITRATE = 40;                  // selected candidate pair available incoming bitrate
+
+  CLIENT_VIDEO_PUBLISHER_PACKETS_SENT = 41;                           // outbound video RTP packets sent
+  CLIENT_VIDEO_PUBLISHER_BYTES_SENT = 42;                             // outbound video RTP bytes sent
+  CLIENT_VIDEO_PUBLISHER_RETRANSMITTED_PACKETS_SENT = 43;             // outbound video retransmitted packets sent
+  CLIENT_VIDEO_PUBLISHER_RETRANSMITTED_BYTES_SENT = 44;               // outbound video retransmitted bytes sent
+  CLIENT_VIDEO_PUBLISHER_TARGET_BITRATE = 45;                         // outbound video target bitrate
+  CLIENT_VIDEO_PUBLISHER_FRAMES_ENCODED = 46;                         // outbound video frames encoded
+  CLIENT_VIDEO_PUBLISHER_KEY_FRAMES_ENCODED = 47;                     // outbound video key frames encoded
+  CLIENT_VIDEO_PUBLISHER_FRAMES_SENT = 48;                            // outbound video frames sent
+  CLIENT_VIDEO_PUBLISHER_HUGE_FRAMES_SENT = 49;                       // outbound video huge frames sent
+  CLIENT_VIDEO_PUBLISHER_FRAME_WIDTH = 50;                            // outbound video frame width
+  CLIENT_VIDEO_PUBLISHER_FRAME_HEIGHT = 51;                           // outbound video frame height
+  CLIENT_VIDEO_PUBLISHER_FRAMES_PER_SECOND = 52;                      // outbound video frames per second
+  CLIENT_VIDEO_PUBLISHER_TOTAL_ENCODE_TIME = 53;                      // outbound video total encode time
+  CLIENT_VIDEO_PUBLISHER_TOTAL_PACKET_SEND_DELAY = 54;                // outbound video total packet send delay
+  CLIENT_VIDEO_PUBLISHER_PLI_COUNT = 55;                              // outbound video PLI count
+  CLIENT_VIDEO_PUBLISHER_FIR_COUNT = 56;                              // outbound video FIR count
+  CLIENT_VIDEO_PUBLISHER_NACK_COUNT = 57;                             // outbound video NACK count
+  CLIENT_VIDEO_PUBLISHER_QP_SUM = 58;                                 // outbound video QP sum
+  CLIENT_VIDEO_PUBLISHER_QUALITY_LIMITATION_RESOLUTION_CHANGES = 59;  // outbound video quality limitation resolution changes
+
+  CLIENT_AUDIO_PUBLISHER_PACKETS_SENT = 60;                           // outbound audio RTP packets sent
+  CLIENT_AUDIO_PUBLISHER_BYTES_SENT = 61;                             // outbound audio RTP bytes sent
+  CLIENT_AUDIO_PUBLISHER_RETRANSMITTED_PACKETS_SENT = 62;             // outbound audio retransmitted packets sent
+  CLIENT_AUDIO_PUBLISHER_RETRANSMITTED_BYTES_SENT = 63;               // outbound audio retransmitted bytes sent
+  CLIENT_AUDIO_PUBLISHER_TARGET_BITRATE = 64;                         // outbound audio target bitrate
+  CLIENT_AUDIO_PUBLISHER_TOTAL_PACKET_SEND_DELAY = 65;                // outbound audio total packet send delay
+
+  CLIENT_PUBLISHER_STREAM_RTT = 66;                                    // outbound RTP stream RTT from remote-inbound-rtp
+  CLIENT_SUBSCRIBER_STREAM_RTT = 67;                                   // inbound RTP stream RTT from remote-outbound-rtp
+
   METRIC_LABEL_PREDEFINED_MAX_VALUE = 4096;
 }
 
