@@ -111,6 +111,7 @@ message TTStartCall {
   int64 timestamp=8;
   TTNotification notification=9;
   repeated TTCipherMessages cipherMessages=10;
+  string clientCallId=11;
 }
 
 message TTCallRequest {
